@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>SIGN UP</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:sans-serif;
+}
+
+.wrapper{
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  background: white;
+  padding: 60px 45px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 20px;
+}
+
+.wrapper .title{
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color:black;
+}
+
+
+.wrapper .form .inputfield{
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.wrapper .form .inputfield .input{
+  width: 100%;
+  padding: 12px;
+  padding-left: 30px;
+  border: none;
+  background-color: azure;
+}
+.wrapper .form .button{
+  width: 70%;
+  margin: 20px auto 0;
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 12px;
+  border-radius: 25px;
+}
+
+.wrapper .form .button a{
+  color:black;
+}
+.wrapper .form .inputfield i{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color:black;
+}
+
+</style>
+</head>
+<body background="https://i.pinimg.com/originals/da/f6/18/daf61862ec45445931d2216778e92af8.jpg">
+    <script>
+        function validation()
+        {
+            var a=document.validationform.name.value;
+            var b=document.validationform.mail.value;
+            var c=document.validationform.num.value;
+            var d=document.validationform.pswd.value;
+            var e=document.validationform.cpswd.value; 
+            var f=b.indexOf("@");  
+            var g=b.lastIndexOf(".");   
+            if(a=="" || a==null)
+            {
+                    alert("NAME CANNOT BE EMPTY");
+                    return false;
+            }
+            if (f<1 || g<f+2 || g+2>=b.length)
+            {  
+                alert("Please enter a valid e-mail address");  
+                return false;  
+            } 
+            if(c==null || c.length<10)
+            {
+                alert("NUMBER LENGTH SHOULD BE EQUAL TO 10 ");
+                return false;
+            }
+            if(d.length>8)
+            {
+                alert("PASSWORD LENGTH SHOULD BE LESS THAN 8");
+                return false;
+            }
+            if(d!=e)
+            {
+                alert("PASSWORD AND CONFIRM PASSWORD IS NOT MATCHING");
+                return false;
+            }
+            
+        }
+    </script>
+    <form name="validationform" >
+<div class="wrapper">
+  <div class="title">
+    SIGN UP
+  </div>
+  <div class="form">
+    <div class="inputfield">
+      USER NAME : <br>
+      <input type="text" name="name" placeholder="User Name" class="input">
+    </div>
+    EMAIL : 
+    <div class="inputfield">
+      <input type="text" name="mail" placeholder="Email" class="input">
+    </div> 
+     PHONE NUMBER : 
+     <div class="inputfield">
+      <input type="number" name="num" placeholder="number" class="input">
+      </div>
+     PASSWORD : 
+    <div class="inputfield">
+      <input type="password" name="pswd" placeholder="Password" class="input">
+     </div>
+     CONFIRM PASSWORD : 
+    <div class="inputfield">
+      <input type="password" name="cpswd" placeholder="confirm Password" class="input">
+    </div>
+    
+      <div class="button">
+      <button onclick="validation()">SUBMIT</button>
+    </div>
+  </div>
+</div>
+    </form>
+</body>
+</html>
